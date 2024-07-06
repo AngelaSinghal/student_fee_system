@@ -1,0 +1,35 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACCOUNTANT EDIT</title>
+</head>
+<body>
+    <h1>ACCOUNTANTS AVAILABLE</h1>
+    {% if vgt %}
+            {% for d in vgt %}
+                <h3>{{d[0]}}</h3>
+                <p>
+                    Name:  {{d[1]}} <br>
+                    Designation:  {{d[2]}}<br>
+                    Contact:  {{d[3]}}<br>
+                    Email:  {{d[4]}}<br>
+                </p>
+                <tr>
+                    <form method="post" action="edit_acc">
+                        <input type="hidden" name="h1" value="{{d[4]}}">
+                        <input type="submit" name="B1" value="EDIT">
+                    </form>
+                    <form method="post" action="delete_acc">
+                        <input type="hidden" name="h1" value="{{d[4]}}">
+                        <input type="submit" name="B1" value="DELETE">
+                    </form>
+                </tr>
+            {% endfor %}
+    {% elif msg %}
+        <h3>{{msg}}</h3>
+    {% endif %}
+</body>
+</html>
+{% endblock %}

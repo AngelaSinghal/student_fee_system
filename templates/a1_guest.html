@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link href="../static/css/bootstrap.min (5).css" rel="stylesheet" type="text/css"/>
+    <link href="../static/jquery/jquery.js" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container-fluid bg-info" style="height:150px;">
+    <h1>Angel student</h1>
+</div>
+
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Student meds</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02" id="menu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">LOGIN</a>
+          <span class="visually-hidden">(current)</span>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="show_course">COURSES AVAILABLE</a>
+          <span class="visually-hidden">(current)</span>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="row" style="min-height:400px;">
+  <div class="col-lg-9 col-sm-12">
+    {% block m1%}
+    {% endblock %}
+  </div>
+</div>
+</body>
+</html>

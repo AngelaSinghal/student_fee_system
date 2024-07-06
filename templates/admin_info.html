@@ -1,0 +1,18 @@
+{% extends 'a3_guest.html'%}
+{% block m3 %}
+<h1>MY PROFILE</h1>
+{% if data %}
+<form method="post" action="admin_info">
+    <p>Name <input value="{{data[0]}}" type="text" name="T1"></p>
+    <p>Address <input value="{{data[1]}}" type="text" name="T2"></p>
+    <p>Contact <input value="{{data[2]}}" type="text" name="T3"></p>
+    <p>Email<input readonly value="{{data[3]}}" type="text" name="T4"></p>
+    <p><button type="submit">Change profile information</button> </p>
+</form>
+
+
+    {% elif msg %}
+        <h3>{{msg}}</h3>
+{% endif %}
+<h3><a href="/admin_home">Back to my page</a></h3>
+{% endblock %}

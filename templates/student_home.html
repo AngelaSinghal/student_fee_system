@@ -1,0 +1,141 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENT HOME</title>
+</head>
+<body>
+<h1>STUDENT DASHBOARD</h1>
+{% if kota %}
+<table border="1" width="50%">
+    <tr>
+        <th>STUDENT ID</th>
+        <th>NAME</th>
+        <th>ADDRESS</th>
+        <th>CONTACT</th>
+        <th>EMAIL</th>
+        <th>&nbsp;</th>
+    </tr>
+    {% for d in kota %}
+    <tr>
+        <td>{{d[0]}}</td>
+        <td>{{d[1]}}</td>
+        <td>{{d[2]}}</td>
+        <td>{{d[3]}}</td>
+        <td>{{d[4]}}</td>
+        <td>
+            <form method="post" action="edit_student">
+                <input type="hidden" name="H1" value="{{st_id}}">
+                <input type="submit" name="B1" value="EDIT"/>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+<br/>
+<hr/>
+<h3>COURSE DETAILS</h3>
+{% if vgt %}
+    <table border="1" width="50%">
+        <tr>
+            <th>COURSE ID</th>
+            <th>STUDENT ID</th>
+            <th>COURSE</th>
+            <th>FEE</th>
+            <th>JOINING</th>
+            <th>REMARKS</th>
+            <th>DISCOUNT</th>
+            <th>PAID</th>
+            <th>DUE</th>
+            <th>
+                <form method="post" action="student_course">
+                    <input type="hidden" name="A1" value="{{st_id}}">
+                    <input type="submit" name="B1" value="ADD COURSE"/>
+                </form>
+            </th>
+        </tr>
+        {% for d in vgt %}
+        <tr>
+            <td>{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+            <td>{{d[2]}}</td>
+            <td>{{d[3]}}</td>
+            <td>{{d[4]}}</td>
+            <td>{{d[5]}}</td>
+            <td>{{d[6]}}</td>
+            <td>{{d[7]}}</td>
+            <td>{{d[8]}}</td>
+            <td>
+                <form method="post" action="edit_course">
+                <input type="hidden" name="H1" value="{{d[1]}}"/>
+                <input type="submit" name="B1" value="Edit"/>
+            </form>
+
+             <form method="post" action="delete_course">
+                <input type="hidden" name="H1" value="{{d[1]}}"/>
+                <input type="submit" name="B1" value="delete"/>
+            </form>
+
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Total fee:{{fees[0]}}</h3>
+    <h3>Discount :{{fees[1]}}</h3>
+    <h3>Fee Paid:{{fees[2]}}</h3>
+    <h3>Total Due:{{fees[3]}}</h3>
+{% endif %}
+
+
+<br/>
+<hr/>
+<h2>INSTALLMENTS</h2>
+{% if angela %}
+<table border="1" width="50%">
+    <tr>
+        <th>Transaction id</th>
+        <th>Student Id</th>
+        <th>Course id</th>
+        <th>Amount</th>
+        <th>Deposit Date</th>
+        <th>Remarks</th>
+        <th>
+
+                <form method="post" action="fee_transaction">
+                    <input type="hidden" name="C1" value="{{st_id}}">
+                    <input type="submit" name="B1" value="ADD INSTALLMENT"/>
+                </form>
+        </th>
+    </tr>
+    {% for fee in angela %}
+    <tr>
+        <td>{{fee[0]}}</td>
+        <td>{{fee[1]}}</td>
+        <td>{{fee[2]}}</td>
+        <td>{{fee[3]}}</td>
+        <td>{{fee[4]}}</td>
+        <td>{{fee[5]}}</td>
+        <td>
+            <form method="post" action="edit_fee">
+                <input type="hidden" name="H1" value="{{fee[1]}}" />
+                <input type="submit" name="B1" value="Edit" />
+            </form>
+             <form method="post" action="delete_fee">
+                <input type="hidden" name="H1" value="{{fee[1]}}"/>
+                <input type="submit" name="B1" value="delete"/>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+<button><a href="show_students">BACK</a></button>
+</body>
+</html>
+{% endblock %}

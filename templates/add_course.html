@@ -1,0 +1,22 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COURSES</title>
+</head>
+<body>
+    <h1>COURSE REGISTRATION</h1>
+    <form method="POST" action="add_course">
+        <p>COURSE<input type="text" name="T1" id="txt1"/></p>
+        <p>FEE<input type="text" name="T2" id="txt2"/></p>
+        <p>DURATION<input type="text" name="T3" id="txt3"/></p>
+        <p>REMARKS<input type="text" name="T4" id="txt4"/></p>
+        <p><button type="submit">REGISTER</button></p>
+    </form>
+{% if x %}
+    <h3>{{x}}</h3>
+{% endif %}
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENT FEES TRANSACTION</title>
+</head>
+<body>
+    <h1>Student fee</h1>
+<form method="POST" action="fee_transaction1" enctype="multipart/form-data">
+    <table width="34%">
+    <p><tr><td>Student Id:<input value="{{st_id}}" name="T1" id="txt1"></td></tr></p>
+    <p><tr><td>Course Id:<input type="text" name="T2" id="txt2"></td></tr></p>
+    <p><tr><td>Amount:<input type="text" name="T3" id="txt3"></td></tr></p>
+    <p><tr><td>Deposit_date:<input type="text" name="T4" id="txt4"></td></tr></p>
+    <p><tr><td>Remarks:<input type="text" name="T5" id="txt5"></td></tr></p>
+    <p><tr><td><button id="btn1" name="B1" >Register</button></td></tr></p>
+    </table>
+</form>
+{% if msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+<button><a href="/student_home">BACK</a></button>
+</body>
+</html>
+{% endblock %}

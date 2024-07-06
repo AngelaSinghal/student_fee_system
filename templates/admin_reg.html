@@ -1,0 +1,25 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin</title>
+</head>
+<body>
+    <h1>ADMIN REGISTRATION</h1>
+    <form id="form1" method="POST" action="admin_reg">
+        <p>Name<input type="text" name="T1" id="txt1"></p>
+        <p>Address<input type="text" name="T2" id="txt2"></p>
+        <p>Contact<input type="text" name="T3" id="txt3"></p>
+        <p>Email<input type="text" name="T4" id="txt4"></p>
+        <p>Password<input type="text" name="T5" id="txt5"></p>
+        <p>Confirm password<input type="text" name="T6" id="txt6"></p>
+        <button value="submit" name="B" id="Btn1">REGISTER</button>
+    </form>
+
+{% if x %}
+    <h3>{{x}}</h3>
+{% endif %}
+</body>
+</html>
+{% endblock %}

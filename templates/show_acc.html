@@ -1,0 +1,34 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACCOUNTANT</title>
+</head>
+<body>
+<h2>SHOW ACCOUNTANT</h2>
+{% if vgt %}
+    <table border="1" width="100%">
+        <tr>
+            <th>EMPLOYEE NO</th>
+            <th>NAME</th>
+            <th>DESIGNATION</th>
+            <th>CONTACT</th>
+            <th>EMAIL</th>
+        </tr>
+        {% for d in vgt %}
+        <tr>
+            <td>{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+            <td>{{d[2]}}</td>
+            <td>{{d[3]}}</td>
+            <td>{{d[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+</body>
+</html>
+{% endblock %}

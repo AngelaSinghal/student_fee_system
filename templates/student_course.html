@@ -1,0 +1,50 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html>
+<body>
+    <h1>STUDENT COURSE REGISTRATION</h1>
+    <form method="post" action="student_course1">
+
+        <p><tr><td>STUDENT ID:<input value="{{st_id}}" type="text" name="T2" id="txt2"></td></tr></p>
+        <p><tr><td>COURSES:
+            <select id="txt3" name="T3">
+                <option></option>
+                <option>C PROGRAMMING</option>
+                <option>C ++ PROGRAMMING</option>
+                <option>DSA(DATA STRUCTURES AND ALGORITHM)</option>
+                <option>WEB DEVELOPMENT</option>
+                <option>PYTHON</option>
+                <option>SOFTWARE DEVELOPMENT</option>
+                <option>MACHINE LEARNING</option>
+                <option>JAVA</option>
+            </select></td></tr></p>
+        <p><tr><td>FEES:<input type="text" name="T4" id="txt4"></td></tr></p>
+        <p><tr><td>JOIN DATE:<input type="text" name="T5" id="txt5"></td></tr></p>
+        <p><tr><td>REMARKS:<input type="text" name="T6" id="txt6"></td></tr></p>
+        <p><tr><td>DISCOUNT:<input type="text" name="T7" id="txt7"></td></tr></p>
+        <p><tr><td><button id="btn1" name="B1">REGISTER</button></td></tr></p>
+    </form>
+{% if data %}
+        <table border="1" width="100%">
+            <tr>
+                <th>COURSE</th>
+                <th>FEES</th>
+                <th>DURATION</th>
+                <th>REMARKS</th>
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td>{{d[0]}}</td>
+                <td>{{d[1]}}</td>
+                <td>{{d[2]}}</td>
+                <td>{{d[3]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+{% elif msg %}
+    <h3>{{h3}}</h3>
+{% endif %}
+<button><a href="student_home">BACK</a></button>
+</body>
+</html>
+{% endblock %}

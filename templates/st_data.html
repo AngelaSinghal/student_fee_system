@@ -1,0 +1,22 @@
+{% extends "a21_guest.html"%}
+{% block m21 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENT DATA</title>
+</head>
+<body>
+    <h1>STUDENT DATA</h1>
+    <form method="POST" action="st_data">
+        <p>NAME<input type="text" name="T2" id="txt2"/></p>
+        <p>ADDRESS<input type="text" name="T3" id="txt3"/></p>
+        <p>CONTACT<input type="text" name="T4" id="txt4"/></p>
+        <p>EMAIL<input type="text" name="T5" id="txt5"/></p>
+        <p><button type="submit">REGISTER</button></p>
+    </form>
+{% if angela %}
+    <h3>{{angela}}</h3>
+{% endif %}
+</body>
+</html>
+{% endblock %}

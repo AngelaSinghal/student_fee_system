@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DELETE ACCOUNTANT</title>
+</head>
+<body>
+<h1>DELETE STUDENT</h1>
+{% if vgt %}
+    {{vgt}}
+<form method="post" action="delete_acc1">
+<p>EMPLOYEE NO<input readonly value="{{vgt[0]}}" type="text" name="T1" id="txt1"></p>
+<p>NAME<input readonly value="{{vgt[1]}}" type="text" name="T2" id="txt2"></p>
+<p>DESIGNATION<input readonly value="{{vgt[2]}}" type="text" name="T3" id="txt3"></p>
+<p>CONTACT<input readonly value="{{vgt[3]}}" type="text" name="T4" id="txt4"></p>
+<p>EMAIL ID<input readonly value="{{vgt[4]}}" type="text" name="T5" id="txt5"></p>
+<p><button type="submit">DELETE</button></p>
+</form>
+{% elif msg  %}
+    <h3>{{msg}}</h3>
+{% endif %}
+</body>
+</html>
