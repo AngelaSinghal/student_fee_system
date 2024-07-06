@@ -1,4 +1,5 @@
 # student_fee_system
+The project is inside the "my-new-branch"
 This project is designed for a tuition center to manage student registrations and fee details efficiently. The application includes roles for admins and accountants, allowing admins to register multiple accountants and accountants to manage student information and payment details.
 Setup Instructions
 1. Create a Virtual Environment
